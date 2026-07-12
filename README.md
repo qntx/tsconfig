@@ -1,18 +1,31 @@
 # @qntx/tsconfig
 
-Shared TSConfig configs for QuantX projects. One package, many configs.
+Shared [TypeScript](https://www.typescriptlang.org/) base configs for QuantX projects.
 
-Forked and reworked from [tsconfig/bases](https://github.com/tsconfig/bases).
+One package, many ready-to-extend configs under `configs/`. Forked and reworked from
+[tsconfig/bases](https://github.com/tsconfig/bases).
 
 ## Install
 
 ```sh
 npm install --save-dev @qntx/tsconfig
-# or
+```
+
+```sh
+pnpm add -D @qntx/tsconfig
+```
+
+```sh
 bun add -d @qntx/tsconfig
 ```
 
+```sh
+yarn add -D @qntx/tsconfig
+```
+
 ## Usage
+
+Point `extends` at a config file in this package:
 
 ```json
 {
@@ -20,11 +33,14 @@ bun add -d @qntx/tsconfig
 }
 ```
 
-Combine multiple configs (TypeScript 5.0+):
+Compose multiple bases (TypeScript 5.0+):
 
 ```json
 {
-  "extends": ["@qntx/tsconfig/configs/strictest.json", "@qntx/tsconfig/configs/node24.json"]
+  "extends": [
+    "@qntx/tsconfig/configs/strictest.json",
+    "@qntx/tsconfig/configs/node24.json"
+  ]
 }
 ```
 
@@ -34,64 +50,65 @@ Inspect the resolved config:
 tsc --showConfig
 ```
 
+### Paths
+
+Configs ship as real files under the package root (no `exports` remapping). Always use:
+
+```text
+@qntx/tsconfig/configs/<name>.json
+```
+
 ## Available configs
 
-All files under [`configs/`](./configs). Common ones:
+All configs live in [`configs/`](./configs). Common choices:
 
-| Config      | Path                                      |
-| ----------- | ----------------------------------------- |
+| Config | Path |
+| --- | --- |
 | Recommended | `@qntx/tsconfig/configs/recommended.json` |
-| Strictest   | `@qntx/tsconfig/configs/strictest.json`   |
-| Node LTS    | `@qntx/tsconfig/configs/node-lts.json`    |
-| Node 24     | `@qntx/tsconfig/configs/node24.json`      |
-| Bun         | `@qntx/tsconfig/configs/bun.json`         |
-| Next.js     | `@qntx/tsconfig/configs/next.json`        |
-| Vite React  | `@qntx/tsconfig/configs/vite-react.json`  |
+| Strictest | `@qntx/tsconfig/configs/strictest.json` |
+| Node LTS | `@qntx/tsconfig/configs/node-lts.json` |
+| Node 24 | `@qntx/tsconfig/configs/node24.json` |
+| Bun | `@qntx/tsconfig/configs/bun.json` |
+| Next.js | `@qntx/tsconfig/configs/next.json` |
+| Vite React | `@qntx/tsconfig/configs/vite-react.json` |
 
-`node-ts` is meant to be combined with a Node config (TypeScript 5.8+):
+Also included: `node10`–`node26`, `node-ts`, `create-react-app`, `cypress`, `deno`,
+`docusaurus`, `ember`, `nuxt`, `qjsengine`, `react-native`, `remix`, `svelte`, `taro`.
+
+### `node-ts`
+
+Requires TypeScript 5.8+. Combine with a Node base:
 
 ```json
 {
-  "extends": ["@qntx/tsconfig/configs/node22.json", "@qntx/tsconfig/configs/node-ts.json"]
+  "extends": [
+    "@qntx/tsconfig/configs/node22.json",
+    "@qntx/tsconfig/configs/node-ts.json"
+  ]
 }
 ```
 
-## Development
+## Contributing
 
-Requires [Bun](https://bun.sh).
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for local setup, checks, commits, and release.
 
-```sh
-bun install   # also installs husky commit-msg hook
-bun run check
-bun run fmt        # format with oxfmt (JSON/JSONC/…)
-bun run fmt:check  # CI-friendly check
-```
+## License
 
-Commits follow [Conventional Commits](https://www.conventionalcommits.org/)
-(enforced by commitlint + husky).
+Licensed under the MIT License ([LICENSE](./LICENSE) or <https://opensource.org/licenses/MIT>).
 
-Publish:
+This project is derived from [tsconfig/bases](https://github.com/tsconfig/bases).
+Unless you explicitly state otherwise, any contribution intentionally submitted for
+inclusion in this project shall be under the MIT License, without additional terms or conditions.
 
-1. Bump `version` in `package.json` (e.g. `1.0.1`)
-2. Commit and push
-3. Create and push a matching tag:
+---
 
-```sh
-git tag v1.0.1
-git push origin v1.0.1
-```
+<div align="center">
 
-Pushing `v*` tags runs **Publish @qntx/tsconfig** automatically (OIDC Trusted Publishing, no npm token).
+A **[QuantX](https://qntx.fun)** open-source project.
 
-Local first publish (already done for `1.0.0`) or emergency:
+<a href="https://qntx.fun"><img alt="QuantX" width="369" src="https://raw.githubusercontent.com/qntx/.github/main/profile/qntx-banner.svg" /></a>
 
-```sh
-npm publish --access public
-```
+<!--prettier-ignore-->
+Code is law. We write both.
 
-### Layout
-
-```text
-configs/   # published package files
-example/   # local smoke example (relative extends)
-```
+</div>
