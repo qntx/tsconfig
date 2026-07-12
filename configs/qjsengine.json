@@ -1,5 +1,5 @@
 {
-	// https://doc.qt.io/qt-5/qjsengine.html
+  // https://doc.qt.io/qt-5/qjsengine.html
   "$schema": "https://www.schemastore.org/tsconfig",
   "display": "QJSEngine",
 

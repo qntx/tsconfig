@@ -5,13 +5,7 @@
   "display": "Node LTS (24)",
   "_version": "24.0.0",
   "compilerOptions": {
-    "lib": [
-      "es2024",
-      "ESNext.Array",
-      "ESNext.Collection",
-      "ESNext.Iterator",
-      "ESNext.Promise"
-    ],
+    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator", "ESNext.Promise"],
     "module": "nodenext",
     "target": "es2024",
     "strict": true,

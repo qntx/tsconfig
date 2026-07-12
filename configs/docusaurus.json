@@ -3,7 +3,7 @@
   "display": "Docusaurus v2",
   "docs": "https://v2.docusaurus.io/docs/typescript-support",
   "_version": "2.0.0",
-  
+
   "compilerOptions": {
     "allowJs": true,
     "esModuleInterop": true,

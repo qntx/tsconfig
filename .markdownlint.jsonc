@@ -10,7 +10,7 @@
   // mandates repeated `### Added` / `### Changed` / `### Removed` under each
   // version, but we still flag accidental duplicates within the same scope.
   "MD024": {
-    "siblings_only": true
+    "siblings_only": true,
   },
   // Inline HTML: permitted. README uses <p align="center">, <img>, <a> and
   // similar elements for badges, centered headers and tables.
@@ -20,5 +20,5 @@
   "MD036": false,
   // First line must be a top-level heading: disabled. README typically opens
   // with badges or centered logo blocks before the `# Title` heading.
-  "MD041": false
+  "MD041": false,
 }

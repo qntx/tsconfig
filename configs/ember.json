@@ -3,7 +3,7 @@
   "display": "Ember",
   "docs": "https://guides.emberjs.com/release/typescript/",
   "_version": "3.0.0",
-  "_deprecated": true,  
+  "_deprecated": true,
 
   // This is the base config used by Ember apps and addons. When actually used
   // via Ember CLI (e.g. ember-cli-typescript's blueprint), it additionally has
@@ -27,7 +27,7 @@
 
     // Practically, it is *nearly* impossible to have every type-checked
     // package in your dependency graph to have compatible types.
-    // Good stewards of the ecosystem may opt to set this to false and try to 
+    // Good stewards of the ecosystem may opt to set this to false and try to
     // fix packages with failures, but for most people, the error information
     // is inactionable noise.
     "skipLibCheck": true,
@@ -84,8 +84,8 @@
 
     // Don't implicitly pull in declarations from `@types` packages unless we
     // actually import from them AND the package in question doesn't bring its
-    // own types. 
-    // 
+    // own types.
+    //
     // You  may wish to override this e.g. with `"types": ["ember-source/types"]`
     "types": []
   }

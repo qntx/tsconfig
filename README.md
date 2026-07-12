@@ -24,10 +24,7 @@ Combine multiple configs (TypeScript 5.0+):
 
 ```json
 {
-  "extends": [
-    "@qntx/tsconfig/configs/strictest.json",
-    "@qntx/tsconfig/configs/node24.json"
-  ]
+  "extends": ["@qntx/tsconfig/configs/strictest.json", "@qntx/tsconfig/configs/node24.json"]
 }
 ```
 
@@ -41,24 +38,21 @@ tsc --showConfig
 
 All files under [`configs/`](./configs). Common ones:
 
-| Config | Path |
-| ------ | ---- |
+| Config      | Path                                      |
+| ----------- | ----------------------------------------- |
 | Recommended | `@qntx/tsconfig/configs/recommended.json` |
-| Strictest | `@qntx/tsconfig/configs/strictest.json` |
-| Node LTS | `@qntx/tsconfig/configs/node-lts.json` |
-| Node 24 | `@qntx/tsconfig/configs/node24.json` |
-| Bun | `@qntx/tsconfig/configs/bun.json` |
-| Next.js | `@qntx/tsconfig/configs/next.json` |
-| Vite React | `@qntx/tsconfig/configs/vite-react.json` |
+| Strictest   | `@qntx/tsconfig/configs/strictest.json`   |
+| Node LTS    | `@qntx/tsconfig/configs/node-lts.json`    |
+| Node 24     | `@qntx/tsconfig/configs/node24.json`      |
+| Bun         | `@qntx/tsconfig/configs/bun.json`         |
+| Next.js     | `@qntx/tsconfig/configs/next.json`        |
+| Vite React  | `@qntx/tsconfig/configs/vite-react.json`  |
 
 `node-ts` is meant to be combined with a Node config (TypeScript 5.8+):
 
 ```json
 {
-  "extends": [
-    "@qntx/tsconfig/configs/node22.json",
-    "@qntx/tsconfig/configs/node-ts.json"
-  ]
+  "extends": ["@qntx/tsconfig/configs/node22.json", "@qntx/tsconfig/configs/node-ts.json"]
 }
 ```
 
@@ -69,6 +63,8 @@ Requires [Bun](https://bun.sh).
 ```sh
 bun install   # also installs husky commit-msg hook
 bun run check
+bun run fmt        # format with oxfmt (JSON/JSONC/…)
+bun run fmt:check  # CI-friendly check
 ```
 
 Commits follow [Conventional Commits](https://www.conventionalcommits.org/)
