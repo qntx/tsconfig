@@ -25,7 +25,7 @@
     "test": "bun run check",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",
