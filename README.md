@@ -37,10 +37,7 @@ Compose multiple bases (TypeScript 5.0+):
 
 ```json
 {
-  "extends": [
-    "@qntx/tsconfig/configs/strictest.json",
-    "@qntx/tsconfig/configs/node24.json"
-  ]
+  "extends": ["@qntx/tsconfig/configs/strictest.json", "@qntx/tsconfig/configs/node24.json"]
 }
 ```
 
@@ -62,15 +59,15 @@ Configs ship as real files under the package root (no `exports` remapping). Alwa
 
 All configs live in [`configs/`](./configs). Common choices:
 
-| Config | Path |
-| --- | --- |
+| Config      | Path                                      |
+| ----------- | ----------------------------------------- |
 | Recommended | `@qntx/tsconfig/configs/recommended.json` |
-| Strictest | `@qntx/tsconfig/configs/strictest.json` |
-| Node LTS | `@qntx/tsconfig/configs/node-lts.json` |
-| Node 24 | `@qntx/tsconfig/configs/node24.json` |
-| Bun | `@qntx/tsconfig/configs/bun.json` |
-| Next.js | `@qntx/tsconfig/configs/next.json` |
-| Vite React | `@qntx/tsconfig/configs/vite-react.json` |
+| Strictest   | `@qntx/tsconfig/configs/strictest.json`   |
+| Node LTS    | `@qntx/tsconfig/configs/node-lts.json`    |
+| Node 24     | `@qntx/tsconfig/configs/node24.json`      |
+| Bun         | `@qntx/tsconfig/configs/bun.json`         |
+| Next.js     | `@qntx/tsconfig/configs/next.json`        |
+| Vite React  | `@qntx/tsconfig/configs/vite-react.json`  |
 
 Also included: `node10`–`node26`, `node-ts`, `create-react-app`, `cypress`, `deno`,
 `docusaurus`, `ember`, `nuxt`, `qjsengine`, `react-native`, `remix`, `svelte`, `taro`.
@@ -81,10 +78,7 @@ Requires TypeScript 5.8+. Combine with a Node base:
 
 ```json
 {
-  "extends": [
-    "@qntx/tsconfig/configs/node22.json",
-    "@qntx/tsconfig/configs/node-ts.json"
-  ]
+  "extends": ["@qntx/tsconfig/configs/node22.json", "@qntx/tsconfig/configs/node-ts.json"]
 }
 ```
 

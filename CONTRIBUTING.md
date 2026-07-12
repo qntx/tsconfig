@@ -27,12 +27,12 @@ Only the `configs/` directory is published (`package.json` → `files`).
 
 ## Scripts
 
-| Command | Description |
-| --- | --- |
-| `bun run check` | Install example deps and run `tsc --noEmit` |
-| `bun run fmt` | Format with [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) |
-| `bun run fmt:check` | Check formatting (used in CI) |
-| `bun run test` | Alias of `check` |
+| Command             | Description                                                         |
+| ------------------- | ------------------------------------------------------------------- |
+| `bun run check`     | Install example deps and run `tsc --noEmit`                         |
+| `bun run fmt`       | Format with [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) |
+| `bun run fmt:check` | Check formatting (used in CI)                                       |
+| `bun run test`      | Alias of `check`                                                    |
 
 ## Making changes
 
@@ -94,9 +94,9 @@ npm publish --access public
 
 ## CI
 
-| Workflow | Trigger |
-| --- | --- |
-| CI | `push`, `pull_request`, `workflow_dispatch` |
-| Publish | `push` tags `v*`, `workflow_dispatch` |
+| Workflow | Trigger                                     |
+| -------- | ------------------------------------------- |
+| CI       | `push`, `pull_request`, `workflow_dispatch` |
+| Publish  | `push` tags `v*`, `workflow_dispatch`       |
 
 CI runs `fmt:check` and `check`.
