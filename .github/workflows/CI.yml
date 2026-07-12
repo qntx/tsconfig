@@ -1,6 +1,5 @@
 name: CI
 
-# For testing
 on: pull_request
 
 jobs:
@@ -9,33 +8,20 @@ jobs:
 
     steps:
       - name: Checkout tree
-        uses: actions/checkout@v3
-
-      - name: Set-up Deno
-        uses: denoland/setup-deno@v1
+        uses: actions/checkout@v7
         with:
-          deno-version: v1.x
+          fetch-depth: 0
 
-      # Build all the packages
-      - name: Create packages for TSConfig JSONs
-        run: deno run --allow-read --allow-write --allow-net scripts/create-npm-packages.ts
+      - name: Set-up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
-      - name: Test
-        working-directory: test/
-        run: |
-          corepack enable
-          pnpm install
-          pnpm test
+      - name: Install dependencies
+        run: bun install
 
-      - name: Update the README
-        run: deno run --allow-read --allow-write --allow-net scripts/update-markdown-readme.ts
+      - name: Lint commit messages
+        run: bunx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
-      - name: Fail if the README needs updating
-        run: |
-          if [[ -z $(git status -s) ]]
-          then
-            echo ""
-          else
-            echo "Please update the README via: deno run --allow-read --allow-write scripts/update-markdown-readme.ts"
-            exit 1
-          fi
+      - name: Check example
+        run: bun run check

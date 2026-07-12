@@ -1,0 +1,8 @@
+{
+  "extends": "./configs/bun.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["bun"]
+  },
+  "include": ["example/**/*.ts"]
+}

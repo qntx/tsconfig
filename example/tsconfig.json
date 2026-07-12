@@ -1,0 +1,7 @@
+{
+  "extends": "../configs/node-lts.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "include": ["index.ts"]
+}

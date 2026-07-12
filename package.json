@@ -1,0 +1,35 @@
+{
+  "name": "@qntx/tsconfig",
+  "version": "1.0.0",
+  "description": "Shared TSConfig configs for qntx projects",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qntx/tsconfig.git"
+  },
+  "keywords": [
+    "tsconfig",
+    "typescript",
+    "qntx"
+  ],
+  "files": [
+    "configs"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "check": "bun install --cwd example && bun run --cwd example check",
+    "test": "bun run check",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@types/bun": "latest",
+    "husky": "^9.1.7",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,9 +1,0 @@
-{
-  "name": "replaced-later",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tsconfig/bases.git",
-    "directory": "bases"
-  },
-  "license": "MIT"
-}

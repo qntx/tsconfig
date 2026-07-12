@@ -1,2 +1,1 @@
-# Treat all bases as 
-bases/*.json linguist-language=JSON-with-Comments
+configs/*.json linguist-language=JSON-with-Comments
